@@ -1,0 +1,35 @@
+### START
+### 1、测试修改接口的参数和结果
+POST http://localhost:8080/test/alterController
+Content-Type: application/x-www-form-urlencoded
+
+param=测试参数
+
+### 2、测试修改普通方法的参数和结果，并测试获取字节码代理的原方法的对象实例
+POST http://localhost:8080/test/alterNormalService
+
+### 3、测试修改Spring注入的方法的参数和结果，并测试获取spring容器的原方法的对象实例
+POST http://localhost:8080/test/alterSpringService
+
+### 4、测试通过jar包新增的接口
+POST http://localhost:8080/new/test
+
+### 5、测试远程修改接口的参数和返回值
+POST http://localhost:8080/test/alterByRemoteController
+Content-Type: application/x-www-form-urlencoded
+
+param=测试参数
+
+### 6、测试中间层
+POST http://localhost:8080/test/middleAlter
+Content-Type: application/x-www-form-urlencoded
+
+name=测试参数
+a=a
+b=b
+
+### 7、测试声明Skip注解，不执行原始方法
+POST http://localhost:8080/test/testSkipService
+### END
+## mvn spring-boot:run -f "/pom.xml"
+## mvn spring-boot:run -f "/pom.xml"
